@@ -1,3 +1,10 @@
 #!/usr/bin/python3
 
-"""Initializes"""
+""" call to filestorage class """
+
+
+from models.engine.file_storage import FileStorage
+storage = FileStorage()
+storage.reload()
+
+"""yes"""

@@ -1,7 +1,15 @@
 #!/usr/bin/python3
 
-"""The `amenity` module"""
+"""aicha"""
+
+"""
+This is amenity class that represents new amenities
+"""
 from models.base_model import BaseModel
+
+
 class Amenity(BaseModel):
-    """An amenity"""
+    """ Amenity subclass that inherits from BaseModel """
     name = ""
+
+"""yes"""
