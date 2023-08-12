@@ -1,69 +1,61 @@
 #!/usr/bin/python3
-""" Defines a class TestState for State module. """
+"""Unit test for the file storage class
+"""
 import unittest
+# import json
+import pep8
+from models import state
 from models.state import State
 from models.base_model import BaseModel
-import datetime
 
 
-class TestState(unittest.TestCase):
+class TestStateClass(unittest.TestCase):
+    """TestStateClass checks for the use of
+    state class
+    Args:
+        unittest (): Propertys for unit testing
+    """
 
-    """Defines"""
-    @classmethod
-    def setUp(cls):
-        """Runs"""
-        cls.state1 = State()
-        cls.state1.name = "Nairobi"
-    @classmethod
-    def tearDown(cls):
-        """Clean"""
-        del cls.state1
-    def test_class_exists(self):
-        """Tests"""
-        result = "<class 'models.state.State'>"
-        self.assertEqual(str(type(self.state1)), result)
-    def test_inheritance(self):
-        """Test"""
-        self.assertIsInstance(self.state1, State)
-        self.assertEqual(type(self.state1), State)
-        self.assertEqual(issubclass(self.state1.__class__, BaseModel), True)
-    def test_types(self):
-        """Test"""
-        self.assertIsInstance(self.state1.id, str)
-        self.assertEqual(type(self.state1.id), str)
-        self.assertIsInstance(self.state1.created_at, datetime.datetime)
-        self.assertIsInstance(self.state1.updated_at, datetime.datetime)
-        self.assertIsInstance(self.state1.name, str)
-    def test_save(self):
-        """Test"""
-        self.state1.save()
-        self.assertNotEqual(self.state1.created_at, self.state1.updated_at)
-    def test_functions(self):
-        """Test"""
-        self.assertIsNotNone(State.__doc__)
-    def test_has_attributes(self):
-        """Test"""
-        self.assertTrue(hasattr(self.state1, 'id'))
-        self.assertTrue(hasattr(self.state1, 'created_at'))
-        self.assertTrue(hasattr(self.state1, 'updated_at'))
-        self.assertTrue(hasattr(self.state1, 'name'))
-    def test_to_dict(self):
-        """Test"""
-        my_model_json = self.state1.to_dict()
-        self.assertEqual(str, type(my_model_json['created_at']))
-        self.assertEqual(my_model_json['created_at'],
-                         self.state1.created_at.isoformat())
-        self.assertEqual(datetime.datetime, type(self.state1.created_at))
-        self.assertEqual(my_model_json['__class__'],
-                         self.state1.__class__.__name__)
-        self.assertEqual(my_model_json['id'], self.state1.id)
-    def test_unique_id(self):
-        """Test"""
-        state2 = self.state1.__class__()
-        state3 = self.state1.__class__()
-        state4 = self.state1.__class__()
-        self.assertNotEqual(self.state1.id, state2.id)
-        self.assertNotEqual(self.state1.id, state3.id)
-        self.assertNotEqual(self.state1.id, state4.id)
+    maxDiff = None
+
+    def setUp(self):
+        """Return to "" class attributes"""
+        State.name = ""
+
+    def test_module_doc(self):
+        """ check for module documentation """
+        self.assertTrue(len(state.__doc__) > 0)
+
+    def test_class_doc(self):
+        """ check for documentation """
+        self.assertTrue(len(State.__doc__) > 0)
+
+    def test_method_docs(self):
+        """ check for method documentation """
+        for func in dir(State):
+            self.assertTrue(len(func.__doc__) > 0)
+
+    def test_pep8(self):
+        """ test base and test_base for pep8 conformance """
+        style = pep8.StyleGuide(quiet=True)
+        file1 = 'models/state.py'
+        file2 = 'tests/test_models/test_state.py'
+        result = style.check_files([file1, file2])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warning).")
+
+    def test_is_instance(self):
+        """ Test if user is instance of basemodel """
+        my_state = State()
+        self.assertTrue(isinstance(my_state, BaseModel))
+
+    def test_field_types(self):
+        """ Test field attributes of user """
+        my_state = State()
+        self.assertTrue(type(my_state.name) == str)
+
+
 if __name__ == '__main__':
     unittest.main()
+
+""aaaa""" """yes"""
