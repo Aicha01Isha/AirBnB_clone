@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+"""aicha"""
+
 """
 This is the console base for the unit
 """
@@ -30,10 +32,11 @@ class HBNBCommand(cmd.Cmd):
             }
 
     def do_nothing(self, arg):
+        """ Does nothing """
         pass
 
     def do_quit(self, arg):
-        """ Close program """
+        """ Close program and saves safely data """
         return True
 
     def do_EOF(self, arg):
@@ -44,7 +47,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
-        """ Overrides"""
+        """ Overrides the empty line method """
         pass
 
     def do_create(self, arg):
@@ -217,7 +220,9 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_count(self, arg):
-        """Counts"""
+        """
+        Counts number of instances of a class
+        """
         counter = 0
         objects_dict = storage.all()
         for key in objects_dict:
@@ -267,4 +272,4 @@ class HBNBCommand(cmd.Cmd):
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
 
-"""yes"""
+"""yes yes yes"""
