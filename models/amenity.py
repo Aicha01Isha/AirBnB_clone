@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-"""aicha"""
 
 """
 This is amenity class that represents new amenities
@@ -12,4 +11,6 @@ class Amenity(BaseModel):
     """ Amenity subclass that inherits from BaseModel """
     name = ""
 
+
+"""aicha"""
 """yes"""

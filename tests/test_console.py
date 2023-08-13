@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Unit test for the file storage class
 """
 import unittest
@@ -346,7 +347,7 @@ class TestConsoleClass(unittest.TestCase):
             self.assertEqual(val.getvalue(), "** no instance found **\n")
 
     def test_amenity_console(self):
-        """ Test the class user with console """
+        """ Test  """
         with patch('sys.stdout', new=StringIO()) as val:
             HBNBCommand().onecmd("create Amenity")
             user_id = val.getvalue()
@@ -367,7 +368,7 @@ class TestConsoleClass(unittest.TestCase):
             self.assertEqual(val.getvalue(), "** no instance found **\n")
 
     def test_review_console(self):
-        """ Test the class user with console """
+        """ Test """
         with patch('sys.stdout', new=StringIO()) as val:
             HBNBCommand().onecmd("create Review")
             user_id = val.getvalue()
@@ -450,7 +451,10 @@ class TestConsoleClass(unittest.TestCase):
             HBNBCommand().onecmd("User.show(\"" + user_id + "\")")
             self.assertTrue("John" in val.getvalue())
 
+
 if __name__ == '__main__':
     unittest.main()
 
+
+"""aicha"""
 """yes"""

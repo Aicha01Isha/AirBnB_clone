@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-"""aicha"""
-
 """
 This is the base model that contains serial/deserial information
 """
@@ -34,7 +32,7 @@ class BaseModel():
                                      self.id, self.__dict__)
 
     def save(self):
-        """ Updates update_at """
+        """ Updates """
         self.updated_at = datetime.today()
         storage.save()
 
@@ -46,4 +44,6 @@ class BaseModel():
         new_dict["updated_at"] = self.updated_at.isoformat()
         return new_dict
 
+
+"""aicha"""
 """yes yes """
