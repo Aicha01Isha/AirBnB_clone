@@ -7,24 +7,21 @@ import datetime
 
 
 class TestUser(unittest.TestCase):
-    """Defines tests for User Class"""
+    """Defines"""
 
     @classmethod
     def setUp(cls):
-        """Runs for each test case.
-        """
+        """Runs"""
         cls.user1 = User()
         cls.user1.name = "Wendy"
 
     @classmethod
     def tearDown(cls):
-        """Cleans up after each test.
-        """
+        """Cleans up"""
         del cls.user1
 
     def test_class_exists(self):
-        """Tests if class exists.
-        """
+        """Tests"""
         result = "<class 'models.user.User'>"
         self.assertEqual(str(type(self.user1)), result)
 
@@ -91,7 +88,3 @@ class TestUser(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-"""aicha """
-"""ouioui"""

@@ -7,24 +7,21 @@ import datetime
 
 
 class TestState(unittest.TestCase):
-    """Defines tests for State Class"""
+    """Defines"""
 
     @classmethod
     def setUp(cls):
-        """Runs for each test case.
-        """
+        """Runs"""
         cls.state1 = State()
         cls.state1.name = "Nairobi"
 
     @classmethod
     def tearDown(cls):
-        """Cleans up after each test.
-        """
+        """Cleans up"""
         del cls.state1
 
     def test_class_exists(self):
-        """Tests if class exists.
-        """
+        """Tests"""
         result = "<class 'models.state.State'>"
         self.assertEqual(str(type(self.state1)), result)
 
@@ -36,8 +33,7 @@ class TestState(unittest.TestCase):
         self.assertEqual(issubclass(self.state1.__class__, BaseModel), True)
 
     def test_types(self):
-        """Test if attributes type is correct.
-        """
+        """Test"""
         self.assertIsInstance(self.state1.id, str)
         self.assertEqual(type(self.state1.id), str)
         self.assertIsInstance(self.state1.created_at, datetime.datetime)
@@ -86,7 +82,3 @@ class TestState(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-""""aicha b"""
-"""yes a"""

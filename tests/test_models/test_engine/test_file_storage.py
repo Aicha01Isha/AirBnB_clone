@@ -8,12 +8,11 @@ import os
 
 
 class TestFileStorage(unittest.TestCase):
-    """Defines tests for FileStorage Class"""
+    """Defines"""
 
     @classmethod
     def setUp(cls):
-        """Runs for each test case.
-        """
+        """Runs"""
         cls.base_model1 = BaseModel()
         cls.file_storage1 = FileStorage()
 
@@ -60,7 +59,3 @@ class TestFileStorage(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-"""aiccha"""
-"""oui"""

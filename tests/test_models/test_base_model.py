@@ -6,25 +6,22 @@ import datetime
 
 
 class TestBaseModel(unittest.TestCase):
-    """Defines tests for Amenity Class"""
+    """Defines"""
 
     @classmethod
     def setUp(cls):
-        """Runs for each test case.
-        """
+        """Runs"""
         cls.BaseModel1 = BaseModel()
         cls.BaseModel1.name = "Samsung"
         cls.BaseModel1.my_number = 89
 
     @classmethod
     def tearDown(cls):
-        """Cleans up after each test.
-        """
+        """Cleans up"""
         del cls.BaseModel1
 
     def test_class_exists(self):
-        """Tests if class exists.
-        """
+        """Tests"""
         result = "<class 'models.base_model.BaseModel'>"
         self.assertEqual(str(type(self.BaseModel1)), result)
 
@@ -40,8 +37,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(self.BaseModel1.id, my_model_json['id'])
 
     def test_types(self):
-        """Test if attributes type is correct.
-        """
+        """Test"""
         self.assertIsInstance(self.BaseModel1.name, str)
         self.assertEqual(type(self.BaseModel1.name), str)
         self.assertIsInstance(self.BaseModel1.id, str)
@@ -111,7 +107,3 @@ class TestBaseModel(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-"""aicha"""
-"""yes"""

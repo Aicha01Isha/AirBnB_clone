@@ -7,24 +7,21 @@ import datetime
 
 
 class TestAmenity(unittest.TestCase):
-    """Defines tests for Amenity Class"""
+    """Defines tests"""
 
     @classmethod
     def setUp(cls):
-        """Runs for each test case.
-        """
+        """Runs"""
         cls.amenity1 = Amenity()
         cls.amenity1.name = "Parking"
 
     @classmethod
     def tearDown(cls):
-        """Cleans up after each test.
-        """
+        """Cleans up"""
         del cls.amenity1
 
     def test_class_exists(self):
-        """Tests if class exists.
-        """
+        """Tests"""
         result = "<class 'models.amenity.Amenity'>"
         self.assertEqual(str(type(self.amenity1)), result)
 
@@ -36,8 +33,7 @@ class TestAmenity(unittest.TestCase):
         self.assertEqual(issubclass(self.amenity1.__class__, BaseModel), True)
 
     def test_types(self):
-        """Test if attributes type is correct.
-        """
+        """Test"""
         self.assertIsInstance(self.amenity1.name, str)
         self.assertEqual(type(self.amenity1.name), str)
         self.assertIsInstance(self.amenity1.id, str)
@@ -87,7 +83,3 @@ class TestAmenity(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-"""aicha"""
-"""yes yes akaj"""

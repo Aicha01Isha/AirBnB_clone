@@ -7,24 +7,21 @@ import datetime
 
 
 class TestPlace(unittest.TestCase):
-    """Defines tests for Place Class"""
+    """Defines"""
 
     @classmethod
     def setUp(cls):
-        """Runs for each test case.
-        """
+        """Runs"""
         cls.place1 = Place()
         cls.place1.name = "Nairobi"
 
     @classmethod
     def tearDown(cls):
-        """Cleans up after each test.
-        """
+        """Cleans up"""
         del cls.place1
 
     def test_class_exists(self):
-        """Tests if class exists.
-        """
+        """Tests"""
         result = "<class 'models.place.Place'>"
         self.assertEqual(str(type(self.place1)), result)
 
@@ -36,8 +33,7 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(issubclass(self.place1.__class__, BaseModel), True)
 
     def test_types(self):
-        """Test if attributes type is correct.
-        """
+        """Test"""
         self.assertIsInstance(self.place1.name, str)
         self.assertEqual(type(self.place1.name), str)
         self.assertIsInstance(self.place1.id, str)
@@ -106,7 +102,3 @@ class TestPlace(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-"""aicha"""
-"""yes"""

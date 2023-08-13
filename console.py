@@ -1,17 +1,9 @@
 #!/usr/bin/python3
-"""Contains the entry point of the command interpreter.
 
-You must use the module cmd.
-Your class definition must be: class HBNBCommand(cmd.Cmd):
-Your command interpreter should implement:
-quit and EOF to exit the program,
-help (this action is provided by default by cmd but you should keep it
-updated and documented as you work through tasks),
-a custom prompt: (hbnb),
-an empty line + ENTER shouldn’t execute anything.
-Your code should not be executed when imported
-"""
+"""Contains the entry point of the command interpreter."""
 import cmd
+import json
+import re
 import models
 from models.base_model import BaseModel
 from models.__init__ import storage
@@ -214,10 +206,6 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
             return False
         return True
-
-
-"""aicha"""
-"""yeah"""
 
 
 if __name__ == '__main__':

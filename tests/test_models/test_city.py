@@ -7,24 +7,21 @@ import datetime
 
 
 class TestCity(unittest.TestCase):
-    """Defines tests for City Class"""
+    """Defines"""
 
     @classmethod
     def setUp(cls):
-        """Runs for each test case.
-        """
+        """Runs"""
         cls.city1 = City()
         cls.city1.name = "Nairobi"
 
     @classmethod
     def tearDown(cls):
-        """Cleans up after each test.
-        """
+        """Cleans up"""
         del cls.city1
 
     def test_class_exists(self):
-        """Tests if class exists.
-        """
+        """Tests"""
         result = "<class 'models.city.City'>"
         self.assertEqual(str(type(self.city1)), result)
 
@@ -89,7 +86,3 @@ class TestCity(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-"""aicha b"""
-"""yes h"""

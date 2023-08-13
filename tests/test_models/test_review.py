@@ -7,7 +7,7 @@ import datetime
 
 
 class TestReview(unittest.TestCase):
-    """Defines tests for Review Class"""
+    """Defines"""
 
     @classmethod
     def setUp(cls):
@@ -33,8 +33,7 @@ class TestReview(unittest.TestCase):
         self.assertEqual(issubclass(self.review1.__class__, BaseModel), True)
 
     def test_types(self):
-        """Test if attributes type is correct.
-        """
+        """Test"""
         self.assertIsInstance(self.review1.id, str)
         self.assertEqual(type(self.review1.id), str)
         self.assertIsInstance(self.review1.created_at, datetime.datetime)
@@ -55,8 +54,7 @@ class TestReview(unittest.TestCase):
         self.assertIsNotNone(Review.__doc__)
 
     def test_has_attributes(self):
-        """Test if expected attributes exist.
-        """
+        """Test"""
         self.assertTrue(hasattr(self.review1, 'id'))
         self.assertTrue(hasattr(self.review1, 'created_at'))
         self.assertTrue(hasattr(self.review1, 'updated_at'))
@@ -89,7 +87,3 @@ class TestReview(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-"""aicha b"""
-"""yes oui"""
